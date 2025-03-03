@@ -1,4 +1,4 @@
-# Protecol for the webots simulation of the robot
+# Protocol for the webots simulation of the robot
 
 ## 1. Introduction
 This document describes the protocol for the webots simulation of the robot. The protocol is divided into two parts: the first part describes the communication between the robot and the server, the second part describes the communication between the server and the client.
