@@ -1,0 +1,123 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/Ball.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5986552023177699 0.6301499251695978 0.49449269008411056 2.1817599744534752
+  position 0.13723297381809996 5.388278687623489 30.381739681700868
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 4.5 4.5 0
+  floorSize 10 10
+  floorTileSize 2 2
+  wallThickness 1
+  wallHeight 2
+}
+Wall {
+  translation 0 1 0
+  size 7 1 2.4
+}
+Wall {
+  translation 8 1 0
+  name "wall(2)"
+  size 7 1 2.4
+}
+Wall {
+  translation -6 6 0
+  name "wall(3)"
+  size 7 1 2.4
+}
+Wall {
+  translation -3 4 0
+  name "wall(4)"
+  size 8 1 2.4
+}
+Wall {
+  translation 3 5 0
+  name "wall(1)"
+  size 1 7 2.4
+}
+Wall {
+  translation 5 5 0
+  name "wall(5)"
+  size 1 7 2.4
+}
+DEF MEGA_RAT Robot {
+  translation 0 0 0.9
+  rotation 0 1 0 0
+  children [
+    DEF sensorUp DistanceSensor {
+      translation 0 0.5 0.5
+      rotation 0 0 1 1.5708
+      name "sensorUp"
+    }
+    DEF sensorDown DistanceSensor {
+      translation 0 -0.5 0.6
+      rotation 0 0 1 -1.5707953071795862
+      name "sensorDown"
+    }
+    DEF sensorLeft DistanceSensor {
+      translation -0.5 0 0.6
+      rotation 0 0 1 3.14159
+      name "sensorLeft"
+    }
+    DEF sensorRight DistanceSensor {
+      translation 0.5 0 0.6
+      name "sensorRight"
+    }
+    Ball {
+      translation 0 0 -8.624250719541093e-07
+      radius 0.5
+    }
+  ]
+  controller "BALLBETTER"
+  controllerArgs [
+    ""
+  ]
+  supervisor TRUE
+}
+DEF MINI_RAT Robot {
+  translation 9 0 1
+  rotation 0 1 0 0
+  children [
+    DEF sensorUp DistanceSensor {
+      translation 0 0.5 0.5
+      rotation 0 0 1 1.5708
+      name "sensorUp"
+    }
+    DEF sensorDown DistanceSensor {
+      translation 0 -0.5 0.6
+      rotation 0 0 1 -1.5707953071795862
+      name "sensorDown"
+    }
+    DEF sensorLeft DistanceSensor {
+      translation -0.5 0 0.6
+      rotation 0 0 1 3.14159
+      name "sensorLeft"
+    }
+    DEF sensorRight DistanceSensor {
+      translation 0.5 0 0.6
+      name "sensorRight"
+    }
+    Ball {
+      translation 0 0 -8.624250719541093e-07
+      radius 0.5
+    }
+  ]
+  name "robot(1)"
+  controller "MINI_RAT_controller"
+  controllerArgs [
+    ""
+  ]
+  supervisor TRUE
+}
